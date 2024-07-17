@@ -1,0 +1,138 @@
+//Q-1)Define a class CARRENTAL with the following details:
+//Class Member are : car1d of int type, carType of string type and rent of float type.
+//Defie GetCar() method which accepts Carid and CarType.
+//GetRent() method which return rent of the car on the basis of car type, i.e. small car = 1000,van = 800,suv=2500
+//showcar() method which allow user to view the contents of car i.e. id,type and rent.
+
+
+//Ans::-
+package firstproject;
+
+public class FirstClass  {
+    private int carId;
+    private String carType;
+    private float rent;
+
+    public void GetCar(int carId, String carType) {
+        this.carId = carId;
+        this.carType = carType;
+        this.rent = GetRent();
+    }
+
+    public float GetRent() {
+        switch (carType.toLowerCase()) {
+            case "small car":
+                return 1000;
+            case "van":
+                return 800;
+            case "suv":
+                return 2500;
+            default:
+                return 0; 
+        }
+    }
+
+    public void ShowCar() {
+        System.out.println("Car ID: " + carId);
+        System.out.println("Car Type: " + carType);
+        System.out.println("Rent: " + rent);
+    }
+
+    public static void main(String[] args) {
+    	FirstClass car = new FirstClass();
+
+        car.GetCar(1, "SUV");
+
+        car.ShowCar();
+        
+    }
+}
+
+
+=========================================================================================
+
+
+//Q-2)Student Program
+
+
+//Ans:
+package firstproject;
+
+public class FirstClass {
+
+    private int rollno;
+    private String name;
+
+    // Constructor
+    public FirstClass(int rollno, String name) {
+        this.rollno = rollno;
+        this.name = name;
+    }
+
+    public void getdata(int rollno, String name) {
+        this.rollno = rollno;
+        this.name = name;
+    }
+
+    public void display() {
+        System.out.println("Roll No: " + rollno);
+        System.out.println("Name: " + name);
+    }
+
+    public static void main(String[] args) {
+        FirstClass student = new FirstClass(12, "Naresh");
+
+        // Display the data
+        student.display();
+
+      
+    }
+}
+
+
+
+
+=====================================================================================
+
+//Q-3 Getter & Setter Method Program
+
+//Ans:
+package firstproject;
+
+public class FirstClass {
+
+    // Data members
+    private int rollno;
+    private String name;
+
+    // Setter method for rollno
+    public void setRollno(int rollno) {
+        this.rollno = rollno;
+    }
+
+    // Getter method for rollno
+    public int getRollno() {
+        return this.rollno;
+    }
+
+    // Setter method for name
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    // Getter method for name
+    public String getName() {
+        return this.name;
+    }
+
+    public static void main(String[] args) {
+        FirstClass student = new FirstClass();
+
+        student.setRollno(12);
+        student.setName("Naresh");
+
+        System.out.println("Roll No: " + student.getRollno());
+        System.out.println("Name: " + student.getName());
+    }
+}
+
